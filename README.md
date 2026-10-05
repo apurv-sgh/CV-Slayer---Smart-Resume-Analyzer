@@ -74,12 +74,15 @@ Copy `.env.example` to `.env` and set:
 - `MONGODB_URI`: MongoDB connection string.
 - `JWT_SECRET`: long random secret; required for auth.
 - `PORT`: API port, default `4000`.
-- `CLIENT_URL`: allowed frontend origin.
+- `CLIENT_URL`: allowed frontend origin. Localhost origins are allowed during development; production uses this configured origin.
+- `VITE_API_URL`: production frontend build's API origin. Leave blank for local development, where Vite proxies requests to the local API.
 - `GEMINI_API_KEY`: optional server-only Gemini key.
 - `GEMINI_MODEL`: optional model name.
 - `SCORING_WEIGHTS_JSON`: optional JSON object overriding score weights.
 
 Never put Gemini keys, JWT secrets, or MongoDB credentials in `src/` or commit them.
+
+For deployment, set `VITE_API_URL` on the frontend host to the deployed API origin, and set `CLIENT_URL` plus `NODE_ENV=production` on the API host. `CLIENT_URL` is normalized to its origin, so a trailing slash is okay. The frontend uses `VITE_API_URL` only in production builds; development requests use the Vite proxy (`API_PROXY_TARGET`, or `localhost` with the API `PORT`). Keep `.env.local` out of Git and configure these variables in the hosting dashboards because ignored local env files are not uploaded during deployment.
 
 ## API
 

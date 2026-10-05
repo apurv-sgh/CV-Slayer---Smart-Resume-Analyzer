@@ -31,7 +31,7 @@ router.post('/', requireAuth, upload.single('resume'), async (req, res, next) =>
 router.get('/demo', async (req, res, next) => {
   try {
     const result = await analyzeResumeAgainstJob({
-      roleTitle: 'Full Stack Developer', company: 'CareerLens demo',
+      roleTitle: 'Full Stack Developer', company: 'CV Slayer demo',
       resumeText: 'Jordan Lee\nSoftware Engineer\njordan@example.com\n\nSkills\nReact, Node.js, MongoDB, Python, JavaScript, REST APIs\n\nExperience\nBuilt responsive React applications and REST APIs using Node.js. Designed MongoDB data models and Python automation scripts.\n\nEducation\nBachelor of Science in Computer Science',
       jobDescription: 'We are hiring a Full Stack Developer. Required: React, Node.js, MongoDB, AWS, Docker, TypeScript. You will build REST APIs, ship reliable features, and collaborate with product. Preferred: Kubernetes, Redis. Bachelor degree and 3+ years experience preferred.',
     })

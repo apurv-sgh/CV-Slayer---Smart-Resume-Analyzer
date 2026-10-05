@@ -3,7 +3,8 @@ import User from '../models/User.js'
 import { requireAuth, signToken } from '../middleware/auth.js'
 
 const router = Router()
-const cookieOptions = { httpOnly: true, sameSite: 'lax', secure: process.env.NODE_ENV === 'production', maxAge: 7 * 24 * 60 * 60 * 1000 }
+const isProduction = process.env.NODE_ENV === 'production'
+const cookieOptions = { httpOnly: true, sameSite: isProduction ? 'none' : 'lax', secure: isProduction, maxAge: 7 * 24 * 60 * 60 * 1000 }
 
 router.post('/register', async (req, res, next) => {
   try {
