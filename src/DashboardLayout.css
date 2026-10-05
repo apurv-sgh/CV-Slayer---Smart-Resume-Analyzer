@@ -1,0 +1,373 @@
+.sidebar {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  height: 100dvh;
+  align-self: flex-start;
+  overflow: hidden;
+  padding-top: 20px;
+  padding-bottom: 15px;
+}
+
+.brand-row {
+  padding-bottom: 22px;
+}
+
+.workspace-switcher {
+  margin-bottom: 22px;
+}
+
+.nav-label-spaced {
+  margin-top: 17px;
+}
+
+.nav-item {
+  padding-top: 9px;
+  padding-bottom: 9px;
+}
+
+.upgrade-card {
+  padding: 12px 13px;
+}
+
+.upgrade-icon {
+  margin-bottom: 7px;
+}
+
+.upgrade-card p {
+  margin-top: 4px;
+  margin-bottom: 8px;
+}
+
+.security-note {
+  padding-top: 12px;
+}
+
+.page-wrap {
+  padding-top: 34px;
+  padding-bottom: 56px;
+}
+
+.page-heading {
+  margin-bottom: 23px;
+}
+
+.hero-grid {
+  grid-template-columns: minmax(0, 1.35fr) minmax(300px, .8fr);
+  gap: 16px;
+}
+
+.analysis-card {
+  min-height: 0;
+  padding: 23px 26px 19px;
+  background: linear-gradient(145deg, #29262d, #35313a);
+}
+
+.analysis-card h2 {
+  margin-top: 13px;
+  margin-bottom: 5px;
+  font-size: clamp(26px, 2.5vw, 34px);
+  line-height: 1.08;
+  letter-spacing: -1px;
+}
+
+.analysis-intro {
+  max-width: 410px;
+  margin: 0;
+  color: #c1bbc2;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.analysis-steps {
+  grid-template-columns: minmax(190px, .85fr) minmax(0, 1.15fr);
+  gap: 12px;
+  margin-top: 17px;
+}
+
+.upload-zone,
+.job-input-wrap {
+  border-color: #514b55;
+  background: #332f35;
+}
+
+.upload-zone {
+  min-height: 108px;
+  padding: 14px;
+  gap: 11px;
+}
+
+.upload-icon {
+  width: 35px;
+  height: 35px;
+  flex-basis: 35px;
+  color: #d0b9f1;
+}
+
+.upload-zone strong {
+  color: #f3eff5;
+  font-size: 12px;
+}
+
+.upload-zone span {
+  color: #b0a9b4;
+  font-size: 10px;
+  margin-top: 5px;
+}
+
+.success-check {
+  flex: 0 0 auto;
+}
+
+.job-input-wrap {
+  min-height: 108px;
+  padding: 11px 13px 9px;
+}
+
+.input-label {
+  gap: 6px;
+  color: #c0b7c3;
+  font-size: 10px;
+}
+
+.job-input-wrap textarea {
+  min-height: 68px;
+  resize: vertical;
+  padding: 0 0 12px;
+  color: #f1edf3;
+  font-size: 12px;
+  line-height: 1.45;
+}
+
+.char-count {
+  color: #a59da8;
+  font-size: 9px;
+}
+
+.analyze-button {
+  margin-top: 13px;
+}
+
+.privacy-line {
+  margin-top: 10px;
+  color: #aaa3ad;
+  font-size: 10px;
+}
+
+.score-card {
+  min-height: 0;
+  padding: 23px 25px 20px;
+}
+
+.score-orbit {
+  height: 180px;
+}
+
+@media (max-height: 720px) and (min-width: 901px) {
+  .sidebar {
+    padding-top: 14px;
+    padding-bottom: 10px;
+  }
+
+  .brand-row {
+    padding-bottom: 15px;
+  }
+
+  .workspace-switcher {
+    margin-bottom: 14px;
+  }
+
+  .nav-label-spaced {
+    margin-top: 10px;
+  }
+
+  .nav-item {
+    padding-top: 7px;
+    padding-bottom: 7px;
+  }
+
+  .upgrade-card {
+    padding: 9px 11px;
+  }
+
+  .upgrade-icon {
+    width: 22px;
+    height: 22px;
+    margin-bottom: 5px;
+  }
+
+  .upgrade-card p {
+    margin: 3px 0 6px;
+  }
+
+  .security-note {
+    padding-top: 8px;
+  }
+}
+
+@media (max-width: 1100px) and (min-width: 901px) {
+  .hero-grid {
+    grid-template-columns: minmax(0, 1.2fr) minmax(280px, .8fr);
+  }
+
+  .analysis-steps {
+    grid-template-columns: 1fr;
+  }
+
+  .upload-zone,
+  .job-input-wrap {
+    min-height: 80px;
+  }
+
+  .job-input-wrap textarea {
+    min-height: 44px;
+  }
+}
+
+@media (max-width: 900px) {
+  .sidebar {
+    position: fixed;
+    inset: 0 auto 0 0;
+    height: 100vh;
+    height: 100dvh;
+    z-index: 10;
+    transform: translateX(-100%);
+    transition: transform .25s ease;
+    box-shadow: 15px 0 40px #251a2718;
+  }
+
+  .sidebar-open {
+    transform: translateX(0);
+  }
+
+  .hero-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .analysis-steps {
+    grid-template-columns: minmax(190px, .85fr) minmax(0, 1.15fr);
+  }
+
+  .score-card {
+    min-height: 0;
+  }
+}
+
+@media (max-width: 560px) {
+  .page-wrap {
+    padding-top: 25px;
+    padding-bottom: 45px;
+  }
+
+  .analysis-card,
+  .score-card {
+    padding: 21px 18px;
+  }
+
+  .analysis-steps {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-height: 600px) and (min-width: 901px) {
+  .topbar {
+    height: 56px;
+  }
+
+  .page-wrap {
+    padding-top: 12px;
+  }
+
+  .page-heading {
+    margin-bottom: 12px;
+  }
+
+  .page-heading p {
+    display: none;
+  }
+
+  .page-heading h1 {
+    font-size: 27px;
+  }
+
+  .analysis-card h2,
+  .analysis-intro {
+    display: none;
+  }
+
+  .analysis-card {
+    padding-top: 16px;
+  }
+
+  .analysis-steps {
+    margin-top: 10px;
+  }
+
+  .upload-zone,
+  .job-input-wrap {
+    min-height: 88px;
+  }
+
+  .job-input-wrap textarea {
+    min-height: 52px;
+  }
+
+  .analyze-button {
+    margin-top: 8px;
+    padding-top: 9px;
+    padding-bottom: 9px;
+  }
+
+  .privacy-line {
+    margin-top: 6px;
+  }
+
+  .sidebar {
+    padding-top: 8px;
+    padding-bottom: 6px;
+  }
+
+  .brand-row {
+    padding-bottom: 8px;
+  }
+
+  .workspace-switcher {
+    padding: 6px;
+    margin-bottom: 8px;
+  }
+
+  .nav-list {
+    gap: 0;
+  }
+
+  .nav-label {
+    padding-bottom: 3px;
+  }
+
+  .nav-label-spaced {
+    margin-top: 5px;
+  }
+
+  .nav-item {
+    padding-top: 5px;
+    padding-bottom: 5px;
+  }
+
+  .upgrade-card {
+    padding: 6px 10px;
+  }
+
+  .upgrade-icon {
+    width: 18px;
+    height: 18px;
+    margin-bottom: 4px;
+  }
+
+  .upgrade-card p {
+    display: none;
+  }
+
+  .security-note {
+    padding-top: 5px;
+  }
+}
