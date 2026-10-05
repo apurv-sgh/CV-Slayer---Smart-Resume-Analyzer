@@ -1,6 +1,6 @@
-# CareerLens AI
+# CV Slayer
 
-CareerLens AI compares a resume with a job description and explains the alignment using explicit evidence. It identifies strong matches, partial/unclear matches, missing requirements, score components, and next-step recommendations.
+CV Slayer compares a resume with a job description and explains the alignment using explicit evidence. It identifies strong matches, partial/unclear matches, missing requirements, score components, and next-step recommendations.
 
 ## Features
 
@@ -122,12 +122,49 @@ Gemini is isolated in `server/services/aiService.js` and only receives structure
 
 Build the frontend with `npm run build` and serve `dist/` from a static host. Deploy the Node API as a separate service with the same environment variables and a production MongoDB connection. Set `CLIENT_URL` to the deployed frontend origin, use HTTPS, and set `NODE_ENV=production` so auth cookies are secure. Configure the Gemini key only in the backend deployment secret store.
 
-## Demo flow
 
-1. Start `npm run dev:full`.
-2. Open the dashboard and choose **Try demo**.
-3. Review the deterministic score, matched skills, missing AWS/Docker/TypeScript requirements, and evidence rows.
-4. Upload a PDF/DOCX and paste a role description to exercise the authenticated path after registering a user.
+## Test the Demo
+
+1. Open the Overview page.
+2. Click **Try demo**.
+3. Confirm the score, matched skills, missing skills, and evidence appear.
+4. Open **Insights** and confirm saved-account metrics are shown when logged in.
+
+## Test Authentication
+
+1. Click **Sign in** from My analyses or Settings.
+2. Choose **Create a new account**.
+3. Enter a name, valid email, and password with at least 8 characters.
+4. Confirm registration succeeds.
+5. Open Settings and confirm the user name and email appear.
+6. Open My analyses and confirm the protected page loads.
+7. Sign out and confirm saved data is no longer visible.
+
+## Test Resume Analysis
+
+1. Sign in.
+2. Return to Overview.
+3. Upload a PDF or DOCX resume.
+4. Paste a job description containing required and preferred skills.
+5. Click **Analyze my match**.
+6. Confirm the UI shows:
+   - Compatibility score
+   - Required coverage
+   - Matched skills
+   - Missing skills
+   - Evidence text
+   - Recommendations when available
+7. Open My analyses and confirm the report is saved.
+8. Open the report, then test Delete.
+
+## Test Error Handling
+
+- Upload an unsupported file type.
+- Upload a file larger than 5 MB.
+- Submit an empty or very short job description.
+- Try a private analysis while signed out.
+- Try an incorrect password.
+- Visit an unknown route and confirm it redirects to Overview.
 
 ## Current limitations
 
